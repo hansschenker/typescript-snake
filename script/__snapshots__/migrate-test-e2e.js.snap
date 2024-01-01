@@ -1,0 +1,250 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`expected file changes > .eslintignore 1`] = `
+"--- a/.eslintignore
++++ b/.eslintignore
+@@ ... @@
+ !.*
+-coverage*
++coverage
+ lib
+ node_modules
+ pnpm-lock.yaml"
+`;
+
+exports[`expected file changes > .eslintrc.cjs 1`] = `
+"--- a/.eslintrc.cjs
++++ b/.eslintrc.cjs
+@@ ... @@
+-/*
+-👋 Hi! This ESLint configuration contains a lot more stuff than many repos'!
+-You can read from it to see all sorts of linting goodness, but don't worry -
+-it's not something you need to exhaustively understand immediately. 💙
+-
+-If you're interested in learning more, see the 'getting started' docs on:
+-- ESLint: https://eslint.org
+-- typescript-eslint: https://typescript-eslint.io
+-*/
+-
+ /** @type {import("@types/eslint").Linter.Config} */
+ module.exports = {
+ 	env: {
+@@ ... @@ module.exports = {
+ 			rules: {
+ 				// These off-by-default rules work well for this repo and we like them on.
+ 				"deprecation/deprecation": "error",
+-
+-				// These more-strict-by-default rules don't work well for this repo and we like them less strict.
+-				"@typescript-eslint/no-unnecessary-condition": [
+-					"error",
+-					{
+-						allowConstantLoopConditions: true,
+-					},
+-				],
+-				"@typescript-eslint/prefer-nullish-coalescing": [
+-					"error",
+-					{ ignorePrimitives: true },
+-				],
+ 			},
+ 		},
+ 		{"
+`;
+
+exports[`expected file changes > .github/workflows/test.yml 1`] = `
+"--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ ... @@ jobs:
+       - run: pnpm run test --coverage
+       - name: Codecov
+         uses: codecov/codecov-action@v3
+-        with:
+-          flags: unit
+-      - if: always()
+-        name: Archive code coverage results
+-        uses: actions/upload-artifact@v4
+-        with:
+-          name: code-coverage-report
+-          path: coverage
+ 
+ name: Test
+ "
+`;
+
+exports[`expected file changes > .gitignore 1`] = `
+"--- a/.gitignore
++++ b/.gitignore
+@@ ... @@
+-coverage*/
++coverage/
+ lib/
+ node_modules/"
+`;
+
+exports[`expected file changes > .prettierignore 1`] = `
+"--- a/.prettierignore
++++ b/.prettierignore
+@@ ... @@
+ .all-contributorsrc
+-coverage*/
++coverage/
+ lib/
+ pnpm-lock.yaml"
+`;
+
+exports[`expected file changes > README.md 1`] = `
+"--- a/README.md
++++ b/README.md
+@@ ... @@
+ 
+ <img align="right" alt="Project logo: the TypeScript blue square with rounded corners, but a plus sign instead of 'TS'" src="./create-typescript-app.png">
+ 
+-\`create-typescript-app\` is a one-stop-shop solution to set up a new or existing repository with the latest and greatest TypeScript tooling.
+-It includes options not just for building and testing but also GitHub repository templates, contributor recognition, automated release management, and more.
+-
+-## Getting Started
+-
+-First make sure you have the following installed:
+-
+-- [GitHub CLI](https://cli.github.com) _(you'll need to be logged in)_
+-- [Node.js](https://nodejs.org)
+-- [pnpm](https://pnpm.io)
+-
+-Then in an existing repository or in your directory where you'd like to make a new repository:
+-
+-\`\`\`shell
+-npx create-typescript-app
+-\`\`\`
+-
+-That setup script will walk you through using the template.
+-You can read more about the supported setup modes in their docs pages:
+-
+-- [**Creating from the terminal**](./docs/Creation.md): creating a new repository locally on the command-line _(recommended)_
+-- [**Initializing from the template**](./docs/Initialization.md): creating a new repository with the [_Use this template_](https://github.com/JoshuaKGoldberg/create-typescript-app/generate) button on GitHub
+-- [**Migrating an existing repository**](./docs/Migration.md): adding this template's tooling on top of an existing repository
+-
+-## Documentation
+-
+-You can read more about \`create-typescript-app\` and the tooling it supports:
+-
+-1. [**Tooling**](./docs/Tooling.md): a breakdown of all the pieces this template can set up.
+-2. [**Options**](./docs/Options.md): granular options to customize how the template is run.
+-3. [**FAQs**](./docs/FAQs.md): frequently asked questions
+-
+-> [!NOTE]  
+-> This template is early stage, opinionated, and not endorsed by the TypeScript team.
+-> It can be configured to set up a _lot_ of tooling out of the box.
+-> If you don't want to use any particular tool, you can always remove it manually.
+-
+ ## Development
+ 
+ See [\`.github/CONTRIBUTING.md\`](./.github/CONTRIBUTING.md), then [\`.github/DEVELOPMENT.md\`](./.github/DEVELOPMENT.md).
+@@ ... @@ Thanks! 💖
+ 
+ <!-- ALL-CONTRIBUTORS-LIST:END -->
+ <!-- spellchecker: enable -->
++
++<!-- You can remove this notice if you don't want it 🙂 no worries! -->
++
++> 💙 This package was templated with [\`create-typescript-app\`](https://github.com/JoshuaKGoldberg/create-typescript-app)."
+`;
+
+exports[`expected file changes > cspell.json 1`] = `
+"--- a/cspell.json
++++ b/cspell.json
+@@ ... @@
+ {
+ 	"dictionaries": ["typescript"],
+ 	"ignorePaths": [
+-		"./coverage*",
+ 		".github",
+ 		"CHANGELOG.md",
++		"coverage",
+ 		"lib",
+ 		"node_modules",
+-		"pnpm-lock.yaml",
+-		"./script/__snapshots__"
++		"pnpm-lock.yaml"
+ 	],
+ 	"words": [
+-		"allcontributors",
+-		"apexskier",
+-		"arethetypeswrong",
+ 		"Codecov",
+ 		"codespace",
+ 		"commitlint",
+ 		"contributorsrc",
+ 		"conventionalcommits",
+-		"execa",
+-		"infile",
+-		"joshuakgoldberg",
+ 		"knip",
+ 		"lcov",
+ 		"markdownlintignore",
+-		"mtfoley",
+-		"npmignore",
+-		"npmjs",
+ 		"npmpackagejsonlintrc",
+ 		"outro",
+ 		"packagejson",
+ 		"quickstart",
+-		"tada",
+ 		"tsup",
+-		"Unstaged",
+-		"vitest",
+ 		"wontfix"
+ 	]
+ }"
+`;
+
+exports[`expected file changes > knip.jsonc 1`] = `
+"--- a/knip.jsonc
++++ b/knip.jsonc
+@@ ... @@
+ {
+ 	"$schema": "https://unpkg.com/knip@latest/schema.json",
+-	"entry": ["src/index.ts!", "script/*e2e.js"],
+-	"ignoreBinaries": ["gh"],
+-	// https://github.com/webpro/knip/issues/417
+-	"ignoreDependencies": ["script"],
+-	"ignoreExportsUsedInFile": {
+-		"interface": true,
+-		"type": true
+-	},
+-	"project": ["src/**/*.ts!", "script/**/*.js"]
++	"entry": ["src/index.ts!"],
++	"ignoreExportsUsedInFile": { "interface": true, "type": true },
++	"project": ["src/**/*.ts!"]
+ }"
+`;
+
+exports[`expected file changes > package.json 1`] = `
+"--- a/package.json
++++ b/package.json
+@@ ... @@
+ 	"scripts": {
+ 		"build": "tsup",
+ 		"format": "prettier \\"**/*\\" --ignore-unknown",
+-		"initialize": "tsx ./bin/index.js --mode initialize",
+ 		"lint": "eslint . .*js --max-warnings 0",
+ 		"lint:knip": "knip",
+ 		"lint:md": "markdownlint \\"**/*.md\\" \\".github/**/*.md\\" --rules sentences-per-line",
+@@ ... @@
+ 		"prepare": "husky install",
+ 		"should-semantic-release": "should-semantic-release --verbose",
+ 		"test": "vitest",
+-		"test:create": "node script/create-test-e2e.js",
+-		"test:initialize": "node script/initialize-test-e2e.js",
+-		"test:migrate": "vitest run -r script/",
+ 		"tsc": "tsc"
+ 	},
+ 	"lint-staged": {
+@@ ... @@
+ 		"vitest": "^1.0.2",
+ 		"yaml-eslint-parser": "^1.2.2"
+ 	},
+-	"packageManager": "pnpm@8.13.1",
++	"packageManager": "pnpm@8.7.0",
+ 	"engines": {
+ 		"node": ">=18"
+ 	},"
+`;
